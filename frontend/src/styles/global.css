@@ -1,0 +1,163 @@
+/* global.css */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-main: #050816;
+  --bg-surface: #0f172a;
+  --bg-surface-soft: #111827;
+  --accent-primary: #38bdf8;
+  --accent-secondary: #a855f7;
+  --accent-success: #22c55e;
+  --accent-warning: #f97316;
+  --accent-danger: #ef4444;
+  --border-subtle: rgba(148, 163, 184, 0.35);
+  --text-main: #e5e7eb;
+  --text-muted: #9ca3af;
+  --text-soft: #6b7280;
+  --radius-card: 18px;
+  --radius-pill: 999px;
+  --shadow-card: 0 18px 40px rgba(15, 23, 42, 0.8);
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.6);
+  --transition-fast: 150ms ease-out;
+  --transition-med: 220ms ease-out;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Inter", sans-serif;
+  background: radial-gradient(circle at top, #1f2937, #020617 55%);
+  color: var(--text-main);
+}
+
+/* App shell */
+
+.app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 16px 24px 20px;
+}
+
+.app-content {
+  max-width: 1240px;
+  width: 100%;
+}
+
+/* Cards */
+
+.card {
+  background: radial-gradient(circle at top left, #1e293b, #020617 70%);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border-subtle);
+  padding: 16px 18px;
+}
+
+.card-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-soft);
+  margin-bottom: 8px;
+}
+
+/* Flex utilities */
+
+.row {
+  display: flex;
+  gap: 16px;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Text */
+
+.text-muted {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Buttons */
+
+.btn {
+  border-radius: 999px;
+  border: none;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #06b6d4, #6366f1);
+  color: white;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.5);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.65);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-muted);
+}
+
+.btn-ghost:hover {
+  background: rgba(148, 163, 184, 0.12);
+}
+
+/* Scrollbars */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.4);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.7);
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .app-main {
+    padding-inline: 12px;
+  }
+}
